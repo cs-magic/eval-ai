@@ -1,0 +1,26 @@
+# This is a basic workflow that is manually triggered
+
+name: Deploy On My Machine
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  push:
+    branches:
+      - main
+
+env:
+  DOMAIN: 'https://eval.cs-magic.cn'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "greet"
+  deploy-on-my-machine:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Runs a single command using the runners shell
+    - name: trigger update via curl
+      run:  curl "${{ env.DOMAIN }}/api/system?update=true&useSSE=true"
