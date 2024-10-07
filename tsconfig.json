@@ -38,6 +38,9 @@
         "../../assets/*",
         "../../*"
       ],
+      "@packages/*": [
+        "packages/*"
+      ]
     }
   },
   "include": [

@@ -1,21 +1,21 @@
 import { appWithChatIdSchema } from "@/schema/app.create"
 import { z } from "zod"
-import { prisma } from "../../../../packages/common-db/providers/prisma/connection"
+import { prisma } from "@packages/common-db/providers/prisma/connection"
 
-import { triggerLLMThreads } from "../../../../packages/common-llm/actions/llm-trigger"
+import { triggerLLMThreads } from "@packages/common-llm/actions/llm-trigger"
 
-import { pusherServerIdSchema } from "../../../../packages/common-pusher/schema"
+import { pusherServerIdSchema } from "@packages/common-pusher/schema"
 import {
   convProcedure,
   createTRPCRouter,
   protectedProcedure,
   publicProcedure,
-} from "../../../../packages/common-trpc/trpc"
+} from "@packages/common-trpc/trpc"
 import {
   ConvUpdateInputSchema,
   ConvWhereUniqueInputSchema,
   UserUpdateInputSchema,
-} from "@/prisma/generated/zod"
+} from "@/../../prisma/generated/zod"
 
 import { appDetailSchema } from "../../../schema/app.detail"
 import { convSummarySchema } from "../../../schema/conv.base"
